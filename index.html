@@ -1,0 +1,159 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    
+    <title>jQuery HTML5 Forms</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/libs/modernizr-2.0.6.min.js"></script>
+</head>
+
+<body>
+
+    <div class="topbar">
+        <div class="fill">
+            <div class="container">
+                <a class="brand" href="#">Mygazines</a>
+                <ul class="nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <p class="pull-right">Logged in as <a href="#">username</a></p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+    
+        <div class="content">
+            <div class="page-header">
+                <h1>Form Validation <small>part of Walk-Through Wizard</small></h1>
+            </div>
+            <div class="row">
+                <div class="span10">
+                    <h2>Step 1</h2>
+                    
+                    
+                    
+                    <form id="frmTest" name="frmTest" action="#" method="post" class="form-stacked">
+            
+                        <div id="testA-container" class="clearfix field-container" rel="popover" data-content="testing" data-original-title="Testing!">
+                            <label for="testAId">Auto-focus Input:</label>
+                            <div class="input">
+                                <input type="text" id="testAId" name="testA" class="xlarge span8" value="testing intial value" data-container="testA-container" autofocus="true" placeholder="I need a value..." data-required="true" data-msg-required="Test A must have a value!" />
+                            </div>
+                        </div>
+            
+                        <div id="testB-container" class="clearfix field-container" rel="popover" data-content="testing" data-original-title="Testing!">
+                            <label for="testBId">Required Input:</label>
+                            <div class="input">
+                                <div class="input-prepend">
+                                    <span class="add-on">@</span>
+                                    <input type="text" id="testBId" name="testB" class="xlarge span7" value="" data-container="testB-container" placeholder="I need a value..." data-required="true" data-msg-required="Test B must have a value!" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="testC-container" class="clearfix field-container" rel="popover" data-content="testing" data-original-title="Testing!">
+                            <label for="testCId">Numeric Input:</label>
+                            <div class="input">
+                                <input type="text" id="testCId" name="testC" class="xlarge span8" value="" data-container="testC-container" placeholder="Numbers only please..." data-pattern="#wholeNums" />
+                            </div>
+                        </div>
+            
+                        <div id="testD-container" class="clearfix field-container" rel="popover" data-content="testing" data-original-title="Testing!">
+                            <label for="testDId">Required Select:</label>
+                            <div class="input" style="width:320px">
+                                <select id="testDId" name="testD" class="xlarge" data-container="testD-container" data-required="true" data-msg-required="Test D must be a valid choice!">
+                                    <option value="">-- Select One --</option>
+                                    <option value="1">Value 1</option>
+                                    <option value="A">Value A</option>
+                                    <option value="2B">Value 2B</option>
+                                    <option value="X3">Value X3</option>
+                                </select>
+                            </div>
+                        </div>
+            
+                        <div id="testE-container" class="clearfix field-container" rel="popover" data-content="testing" data-original-title="Testing!">
+                            <label for="testEId">Pattern Select:</label>
+                            <div class="input" style="width:320px">
+                                <select id="testEId" name="testE" class="xlarge" data-container="testE-container" data-pattern="^\s*\d+\s*$" data-msg-pattern="Test E must be a valid choice!">
+                                    <option value="-1">-- Select One --</option>
+                                    <option value="1">Value 1</option>
+                                    <option value="22">Value 22</option>
+                                    <option value="333">Value 333</option>
+                                    <option value="4444">Value 4444</option>
+                                </select>
+                            </div>
+                        </div>
+            
+                        <div id="testF-container" class="clearfix field-container" rel="popover" data-content="testing" data-original-title="Testing!">
+                            <label for="testFId">Required Textarea:</label>
+                            <div class="input">
+                                <textarea id="testFId" name="testF" rows="5" class="xlarge span8" data-container="testF-container" placeholder="Required...." data-required="required" data-msg-required="Test F must have a value!"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div id="testG-container" class="clearfix field-container" rel="popover" data-content="testing" data-original-title="Testing!">
+                            <label for="testGId">Text-Multi Required:</label>
+                            <div class="input">
+                                <input type="text-multi" id="testGId" name="testG" value="Value 1||Value 2" class="xlarge span8" data-container="testG-container" min="1" max="5" placeholder="This is a text-multi element..." data-required="required" data-msg-required="Test G (Text-Multi) must have a value!" />
+                            </div>
+                        </div>
+                        
+                        <div id="testH-container" class="clearfix field-container" rel="popover" data-content="testing" data-original-title="Testing!">
+                            <label for="testHId">Text-Multi Pattern:</label>
+                            <div class="input">
+                                <input type="text-multi" id="testHId" name="testH" value="123-456-7890||987-654-3210" class="xlarge span8" data-container="testH-container" min="0" max="5" placeholder="This is a text-multi element..." data-pattern="^[\(]?\d{3}[\)]?[\s|\.|-]?\d{3}[\s|\.|-]?\d{4}$" data-msg-pattern="Test H (Text-Multi) must be a valid phone number" />
+                            </div>
+                        </div>
+                
+                        <div id="addNewSpot" class="clearfix"></div>
+            
+                        <div class="actions">
+                            <input type="submit" class="btn" value="Save changes" id="cmdSubmitId"> &nbsp; <button type="reset" class="btn">Cancel</button> &nbsp; <input type="button" value="Add New" id="cmdAddNew" class="btn" />
+                        </div>
+            
+                        <!-- <ul id="validationErrors"></ul> -->
+                    </form>
+                    
+                    
+                </div>
+                <div class="span4">
+                    <h3>Secondary content</h3>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>&copy; Mygazines 2011</p>
+        </footer>
+    
+    </div>
+
+
+    <!-- JavaScript at the bottom for fast page loading -->
+    <script src="js/libs/jquery-1.6.2.min.js"></script>
+    
+    <script src="js/libs/bootstrap-twipsy.js"></script>
+    <script src="js/libs/bootstrap-popover.js"></script>
+    
+    <script src="js/mylibs/jquery.h5form.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/script.js"></script>
+  
+</body>
+</html>
